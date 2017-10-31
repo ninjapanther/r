@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Serverdetails</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Servername</th>
+      <th>Cpu</th>
+      <th>Disk</th>
+      <th>Process</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @serverdetails.each do |serverdetail| %>
+      <tr>
+        <td><%= serverdetail.servername %></td>
+        <td><%= serverdetail.cpu %></td>
+        <td><%= serverdetail.disk %></td>
+        <td><%= serverdetail.process %></td>
+        <td><%= link_to 'Show', serverdetail %></td>
+        <td><%= link_to 'Edit', edit_serverdetail_path(serverdetail) %></td>
+        <td><%= link_to 'Destroy', serverdetail, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Serverdetail', new_serverdetail_path %>

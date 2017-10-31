@@ -1,0 +1,2 @@
+class Serverdetail < ApplicationRecord
+end
